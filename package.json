@@ -1,0 +1,22 @@
+{
+  "name": "urlshorter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nghiaoi3/urlshorter.git"
+  },
+  "author": "nghia221",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nghiaoi3/urlshorter/issues"
+  },
+  "homepage": "https://github.com/nghiaoi3/urlshorter#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
