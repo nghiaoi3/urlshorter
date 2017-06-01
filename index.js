@@ -34,7 +34,8 @@ app.get('/new/:longurl(*)', function(req,res){
     //insert longurl into the collection 'links'
     newlink (db, function(){
       var link = {url : longurl, short: 'test'};
-      
+      console.log(link)
+      console.log(db.links)
       db.links.insert(link);
 
       db.close();
