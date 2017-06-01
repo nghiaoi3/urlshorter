@@ -26,7 +26,7 @@ app.get('/new/:longurl(*)', function(req,res){
     console.log('Unable to connect to the mongoDB server. Error:', err);
   } 
       
-    // create a collection 'links'
+    // fetch  collection 'links'
     var collection = db.collection('links');
     
     //defining a function to create a new link
@@ -37,9 +37,8 @@ app.get('/new/:longurl(*)', function(req,res){
     newlink (db, function(){
       var link = {url : longurl, short: 'test'};
       collection.insertOne(link);
-      
+            console.log(db.links.find());
       db.close();
-      console.log(db.links.find());
     });
     
     
