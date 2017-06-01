@@ -1,5 +1,4 @@
 var mongodb = require('mongodb');
-
 var MongoClient = mongodb.MongoClient;
 var url = 'mongodb://nghiaoi11:9732298@ds157621.mlab.com:57621/food';      
 
