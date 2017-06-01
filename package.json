@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/nghiaoi3/urlshorter#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "mongodb": "^2.2.27",
+    "shortid": "^2.2.8",
+    "valid-url": "^1.0.9"
   }
 }
