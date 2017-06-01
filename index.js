@@ -18,8 +18,7 @@ app.get('/new/:longurl(*)', function(req,res){
       var longurl = req.params.longurl;
 
   res.send(req.params.longurl);
-  console.log('longurl is '+req.params.longurl);
-  
+
     MongoClient.connect(url, function (err, db) {
       
       if (err) {
@@ -37,7 +36,6 @@ app.get('/new/:longurl(*)', function(req,res){
     newlink (db, function(){
       var link = {url : longurl, short: 'test'};
       collection.insertOne(link);
-            console.log(db.links.find());
       db.close();
     });
     
