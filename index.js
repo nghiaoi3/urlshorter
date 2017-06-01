@@ -28,7 +28,11 @@ app.get('/new/:longurl(*)', function(req,res){
               res.send(longurl);
 
 
-    var newlink = function (db,callback){
+    var newlink = function (db, callback){
+              if (err) {
+    console.log('Error:', err);
+  } 
+        return callback(db);
     };
           
     //insert longurl into the collection 'links'
