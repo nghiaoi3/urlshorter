@@ -14,12 +14,17 @@ app.get('/', function(req, res) {
 
 
 app.get('/new/:longurl(*)', function(req,res){
+  
       var longurl = req.params.longurl;
 
   res.send(req.params.longurl);
   console.log('longurl is '+req.params.longurl);
   
     MongoClient.connect(url, function (err, db) {
+      
+      if (err) {
+    console.log('Unable to connect to the mongoDB server. Error:', err);
+  } 
       
     // create a collection 'links'
     var collection = db.collection('links');
@@ -32,29 +37,17 @@ app.get('/new/:longurl(*)', function(req,res){
     newlink (db, function(){
       var link = {url : longurl, short: 'test'};
       collection.insertOne(link);
+      
       db.close();
+      console.log(db.links.find());
     });
     
     
-    
-    
-    
-    
-    
-  if (err) {
-    console.log('Unable to connect to the mongoDB server. Error:', err);
-  } else {
-    console.log(db.links.find());
-
-    db.close();
-  }
-});
-
 });
 
   
 
-
+});
 
 
 
