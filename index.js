@@ -25,7 +25,7 @@ app.get('/new/:longurl(*)', function(req,res){
   } 
   
       console.log('connect to the mongoDB');
-      console.log(db.linksfind());
+      console.log(db.links.find());
 
       /*
     // fetch  collection 'links'
