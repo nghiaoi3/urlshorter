@@ -17,10 +17,8 @@ app.get('/new/:longurl(*)', function(req,res){
   
   res.send(req.params.longurl);
   console.log('longurl is '+req.params.longurl);
-});
-
-  /*
-  MongoClient.connect(url, function (err, db) {
+  
+    MongoClient.connect(url, function (err, db) {
     
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
@@ -31,9 +29,14 @@ app.get('/new/:longurl(*)', function(req,res){
   }
 });
 
-
 });
-*/
+
+  
+
+
+
+
+
 app.listen(port, function(){
     console.log('server is listening ' +port);
 });
