@@ -30,12 +30,13 @@ app.get('/new/:longurl(*)', function(req,res){
     var collection = db.collection('links');
 
     var newlink = function (db,callback){
-          };
+      console.log('ssssssssss')
+    };
           
     //insert longurl into the collection 'links'
     newlink (db, function(){
       var link = {url : longurl, short: 'test'};
-      collection.insert([link]);
+      collection.insertOne(link);
 
       db.close();
     });
