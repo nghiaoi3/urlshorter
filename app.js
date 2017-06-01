@@ -18,6 +18,7 @@ app.get('/', function(req, res) {
 app.get('/new/:longurl(*)', function(req,res){
   
   res.send(req.params.longurl);
+  console.log('longurl is '+req.params.longurl)
   
   MongoClient.connect(url, function (err, db) {
     
