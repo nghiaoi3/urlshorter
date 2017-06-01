@@ -23,7 +23,11 @@ app.get('/new/:longurl(*)', function(req,res){
       if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
   } 
-      
+  
+      console.log('connect to the mongoDB');
+      console.log(db.linksfind());
+
+      /*
     // fetch  collection 'links'
     var collection = db.collection('links');
     
@@ -40,7 +44,7 @@ app.get('/new/:longurl(*)', function(req,res){
       db.close();
     });
     
-    
+    */
 });
 
   
