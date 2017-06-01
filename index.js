@@ -27,15 +27,11 @@ app.get('/new/:longurl(*)', function(req,res){
       console.log('connect to the mongoDB');
               res.send(longurl);
 
-
-      /*
-    // fetch  collection 'links'
     var collection = db.collection('links');
-    
-    //defining a function to create a new link
+
     var newlink = function (db,callback){
           };
-    
+          
     //insert longurl into the collection 'links'
     newlink (db, function(){
       var link = {url : longurl, short: 'test'};
@@ -44,7 +40,7 @@ app.get('/new/:longurl(*)', function(req,res){
       db.close();
     });
     
-    */
+    
 });
 
   
