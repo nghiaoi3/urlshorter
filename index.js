@@ -98,19 +98,23 @@ var findlink = function (db, callback){
 
 
 findlink(db, function() {
-console.log('code is '+shortcode)
+console.log('type code is '+typeof shortcode)
+
+
+
+
     collection.findOne({'short':shortcode},{url:1,_id:0}, function(doc){
 
           if (doc !=null ) {
               
-        console.log('FOUND a doc!!');  
+        console.log('FOUND a record!!');  
         
         // redirect to the corresponding original url
         res.redirect(doc.url)
 } else {
             console.log(doc);  
             // return error JSON
-res.json({error:'NOT FOUND THIS SHORT LINK IN THE DATABASE'})
+res.json({error:'NOT FOUND a record corresponding with THIS SHORT LINK in THE DATABASE'})
 }
             })
     
