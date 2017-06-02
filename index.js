@@ -40,7 +40,7 @@ var newlink = function (db, callback){
     };
           
     // check if the longurl is a valid url
-  if (validurl.idUri(longurl)) {
+  if (validurl.isUri(longurl)) {
       
             console.log('valid url')
 // if the url is valid
