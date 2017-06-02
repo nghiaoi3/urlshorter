@@ -104,8 +104,7 @@ if (err) {
     console.log('ERRORR!!!!')
 }
           if (doc !=null ) {
-              
-        console.log('FOUND a record!!');  
+      console.log('FOUND a record!!');  
         
         // redirect to the corresponding original url
         res.redirect(doc.url)
