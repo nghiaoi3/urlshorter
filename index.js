@@ -16,6 +16,7 @@ app.get('/', function(req, res) {
 
 
 
+
 app.get('/new/:longurl(*)', function(req,res){
   
       var longurl = req.params.longurl;
@@ -41,7 +42,6 @@ var newlink = function (db, callback){
     // check if the longurl is a valid url
   if (validurl.isUri(longurl)) {
       
-            console.log('valid url')
 // if the url is valid
       //insert the valid url into the collection 'links' and its generated shortcode
       
@@ -57,7 +57,7 @@ var newlink = function (db, callback){
   } else {
       // if the url is NOT valid
 
-      res.json({  error:'Wrong URL format'     })
+      res.json({  error:'Wrong URL format, and make sure you have a valid protocol and real site.'     })
   }
     
     
