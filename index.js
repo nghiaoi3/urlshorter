@@ -108,7 +108,7 @@ console.log('code is '+shortcode)
         // redirect to the corresponding original url
         res.redirect(doc.url)
 } else {
-            console.log('NOT FOUND a doc!!');  
+            console.log(doc);  
             // return error JSON
 res.json({error:'NOT FOUND THIS SHORT LINK IN THE DATABASE'})
 }
