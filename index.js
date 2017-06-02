@@ -75,7 +75,7 @@ var newlink = function (db, callback){
 });
 
 //GET short url -> redirection
-app.get('/new/:short', function(req,res){
+app.get('/:short', function(req,res){
         var shortcode = req.params.short;
 
    MongoClient.connect(url, function (err, db) {
