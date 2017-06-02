@@ -98,7 +98,7 @@ var findlink = function (db, callback){
 
 
 findlink(db, function() {
-    collection.findOne({short:shortcode},{url:1,_id:0}, function(doc){
+    collection.findOne({'short':shortcode},{url:1,_id:0}, function(doc){
           if (doc !=null ) {
               
         console.log('FOUND a doc!!');  
