@@ -7,6 +7,9 @@ var app = express()
 var port = process.env.PORT || 3000
 
 var shortid = require('shortid')
+// use $ and @ instead of - and _ 
+    shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
+
 var validurl= require('valid-url')
 
 
@@ -47,6 +50,7 @@ var newlink = function (db, callback){
       
     newlink (db, function(){
         
+    
     var shortcode =  shortid.generate();
     console.log('code '+shortcode)
     var link = {url : longurl, short:shortcode};
