@@ -6,6 +6,9 @@ var express = require('express')
 var app = express()
 var port = process.env.PORT || 3000
 
+var shortid = require('shortid')
+var validurl= require('valid-url')
+
 
 app.get('/', function(req, res) {
     res.send('Hello from NGHIA, please enter timestamp in your URL query');
@@ -23,26 +26,40 @@ app.get('/new/:longurl(*)', function(req,res){
       if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
   } 
-  
-      console.log('connect to the mongoDB');
+    console.log('connect to the mongoDB');
               res.send(longurl);
+              
 var collection = db.collection('links')
 
-    var newlink = function (db, callback){
+// function 
+var newlink = function (db, callback){
               if (err) {
     console.log('Error:', err);
   } 
         return callback(db);
     };
           
-    //insert longurl into the collection 'links'
+    // check if the longurl is a valid url
+  if (validurl.idUri(longurl)) {
+      
+            console.log('valid url')
+// if the url is valid
+      //insert the valid url into the collection 'links' and its generated shortcode
+      
     newlink (db, function(){
-      var link = {url : longurl, short: 'test'};
-      console.log('gggggg')
+        
+    var shortcode =  shortid.generate();
+    var link = {url : longurl, short:shortcode};
       collection.insert(link);
-
+      res.json({original_url: longurl, short_url: 'https://shielded-sea-69229.herokuapp.com/'+shortcode})
       db.close();
     });
+      
+  } else {
+      // if the url is NOT valid
+
+      res.json({  error:'Wrong URL format'     })
+  }
     
     
 });
