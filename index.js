@@ -48,6 +48,7 @@ var newlink = function (db, callback){
     newlink (db, function(){
         
     var shortcode =  shortid.generate();
+    console.log('code '+shortcode)
     var link = {url : longurl, short:shortcode};
       collection.insert(link);
       res.json({original_url: longurl, short_url: 'https://shielded-sea-69229.herokuapp.com/'+shortcode})
