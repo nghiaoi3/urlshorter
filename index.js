@@ -70,7 +70,6 @@ var newlink = function (db, callback){
     
 });
 
-  
 
 });
 
