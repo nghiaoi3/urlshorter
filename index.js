@@ -14,7 +14,7 @@ var validurl= require('valid-url')
 
 
 app.get('/', function(req, res) {
-    res.send('Hello from NGHIA, please enter timestamp in your URL query');
+    res.send('Hello from NGHIA, please provide your URL needed a short code. Example: https://shielded-sea-69229.herokuapp.com/new/&#43your URL');
 });
 
 
