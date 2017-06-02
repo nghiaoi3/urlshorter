@@ -14,7 +14,7 @@ var validurl= require('valid-url')
 
 
 app.get('/', function(req, res) {
-    res.send('Hello from NGHIA, please provide your URL needed a short code. \n Example: https://shielded-sea-69229.herokuapp.com/new/&#34your URL&#34');
+    res.send('Hello from NGHIA, please provide your URL needed a short code. \r\n Example: https://shielded-sea-69229.herokuapp.com/new/&#34your URL&#34');
 });
 
 
