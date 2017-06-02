@@ -100,8 +100,10 @@ var findlink = function (db, callback){
 findlink(db, function() {
 console.log('type code is '+typeof shortcode)
 
-    collection.findOne({short:shortcode},{url:1,_id:0}, function(doc){
-
+    collection.findOne({short:shortcode},{url:1,_id:0}, function(err, doc){
+if (err) {
+    console.log('ERRORR!!!!')
+}
           if (doc !=null ) {
               
         console.log('FOUND a record!!');  
