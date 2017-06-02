@@ -27,8 +27,7 @@ app.get('/new/:longurl(*)', function(req,res){
     console.log('Unable to connect to the mongoDB server. Error:', err);
   } 
     console.log('connect to the mongoDB');
-              res.send(longurl);
-              
+
 var collection = db.collection('links')
 
 // function 
